@@ -25,6 +25,7 @@ dependencies {
             'org.aspectj:aspectjweaver:1.9.7',
             "com.codeborne:selenide:$selenideVersion",
             "io.qameta.allure:allure-selenide:$allureVersion",
+            "io.qameta.allure:allure-junit5:2.15.0",
             "org.junit.jupiter:junit-jupiter-api:$junitVersion")
     testRuntimeOnly(
             'org.slf4j:slf4j-simple:1.7.32',

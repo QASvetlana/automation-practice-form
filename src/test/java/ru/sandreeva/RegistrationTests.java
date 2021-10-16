@@ -2,6 +2,7 @@ package ru.sandreeva;
 
 
 import com.codeborne.selenide.Configuration;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -11,21 +12,18 @@ import static com.codeborne.selenide.Selenide.*;
 import static ru.sandreeva.TestData.firstName;
 import static ru.sandreeva.TestData.lastName;
 
-public class RegistrationTests {
+public class RegistrationTests extends TestBase {
 
     @BeforeAll
-    static void setup() {
-        Configuration.baseUrl = "https://demoqa.com";
+    static void beforeAll() {
         Configuration.startMaximized = true;
+        Configuration.baseUrl = "https://demoqa.com";
     }
-
-
 
     @Test
     void successfulRegistrationTest() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
-
         $("#firstName").val(firstName);
         $("#lastName").val(lastName);
         $("#userEmail").val("alex@egorov.com");
